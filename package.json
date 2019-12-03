@@ -77,6 +77,16 @@
     "@models": "dist/models",
     "@logger": "dist/logger"
   },
+  "jest": {
+    "preset": "ts-jest",
+    "moduleNameMapper": {
+      "^@api/(.*)$": "<rootDir>/src/api/$1"
+    },
+    "testMatch": [
+      "**/test/**/*.test.(ts|js)"
+    ],
+    "testEnvironment": "node"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC"

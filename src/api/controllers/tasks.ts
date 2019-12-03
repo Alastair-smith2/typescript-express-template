@@ -1,8 +1,8 @@
 import { Router, Request, Response, NextFunction } from "express";
 import Logger from "../../logger/index";
-import TaskService from "@api/services/TaskService";
+import TaskService from "../services/TaskService";
 import { validationResult } from "express-validator";
-import { validateTask } from "@api/validators/taskValidator";
+import { validateTask } from "../validators/taskValidator";
 
 const route = Router();
 
@@ -50,7 +50,7 @@ export default (app: Router) => {
     }
   );
 
-  route.post(
+  route.patch(
     "/:id",
     validateTask(),
     async (req: Request, res: Response, next: NextFunction) => {

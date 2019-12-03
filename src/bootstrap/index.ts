@@ -6,7 +6,7 @@ import lusca from "lusca";
 
 import api from "../api/routes";
 import CustomError from "../errors/Custom404";
-import { startDatabase } from "@db/database";
+import { startDatabase } from "../db/database";
 
 // Create Express server
 export const defaultErrorHandler = (

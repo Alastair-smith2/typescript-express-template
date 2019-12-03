@@ -1,6 +1,6 @@
-import { TaskInterface, TaskModel } from "@models/tasks.type";
+import { TaskInterface, TaskModel } from "../../models/tasks.type";
 import { Request } from "express";
-import Task from "@models/tasks";
+import Task from "../../models/tasks";
 
 interface TaskServiceInterface {
   getTasks: () => Promise<TaskInterface[]>;
@@ -32,7 +32,6 @@ class TaskService implements TaskServiceInterface {
     const { id } = req.params;
     const { title, content } = req.body;
     const existingTask = await this.taskModel.findById(id);
-    console.log({ existingTask });
     existingTask.title = title;
     existingTask.content = content;
     await existingTask.save();
